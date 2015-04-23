@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-  File.read('views/index.html')
+  send_file 'views/index.html'
 end
 
 get 'favorites' do
