@@ -10,8 +10,9 @@ get 'favorites' do
   File.read('data.json')
 end
 
-get '/favorites' do
-  file = JSON.parse(File.read('data.json'))
+get '/favorites/add' do
+  contents = File.read('data.json')
+  file = contents && contents.length >= 2 ? JSON.parse(contents) : JSON.parse('[]')
   unless params[:name] && params[:oid]
     return 'Invalid Request'
   end
