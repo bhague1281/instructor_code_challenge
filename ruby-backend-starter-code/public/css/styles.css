@@ -32,7 +32,8 @@ h6 {
 }
 
 /* format results list */
-#results-box p {
+#results-box p,
+#favorites-box p {
     margin-bottom: 0;
 }
 

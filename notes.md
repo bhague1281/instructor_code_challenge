@@ -8,7 +8,7 @@
 
 - clean up code where possible (double-check naming, functions, etc.)
 
-- run JS through JSLint, HTML through validator
+- HTML through validator
 
 - comments for beginners
 
