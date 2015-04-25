@@ -20,8 +20,8 @@
         favoriteButton.innerText = 'Favorite';
 
         // append movie title and favorite button to list
-        document.querySelector('ul').appendChild(node);
-        document.querySelector('ul').appendChild(favoriteButton);
+        document.querySelector('#results').appendChild(node);
+        document.querySelector('#results').appendChild(favoriteButton);
       }
   });
     xhr.send();
@@ -39,5 +39,24 @@
         return xhr.responseText === 'Invalid Request';
       }
     }
+  };
+
+  document.viewFavorites = function() {
+    // send request to receive list of favorites
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/favorites', true);
+    xhr.addEventListener('load', function(response){
+      favorites = JSON.parse(this.response).data;
+      for(var i = 0; i < favorites.length; i++){
+        // create favorite item
+        var node = document.createElement('li');
+        node.innerText = favorites[i].name;
+
+        // append movie title and favorite button to list
+        document.querySelector('#favorites').appendChild(node);
+      }
+    });
+
+    xhr.send();
   };
 })();
