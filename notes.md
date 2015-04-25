@@ -4,15 +4,6 @@
 
 - Chose to use the ruby backend.
 
-## To Do
-
-- clean up code where possible (double-check naming, functions, etc.)
-
-- HTML through validator
-
-- comments for beginners
-
-
 ---
 
 **Bonus**
@@ -30,3 +21,10 @@
     * add a movie to the favorites list
     * viewing the favorites list
     * showing a movie's details
+
+### Backlog of Possible changes
+
+- incorporate Bootstrap or other front-end framework instead of minimal CSS
+- add more error checking, in case API returns inconsistent results
+- remove possibility of duplicate favorites
+- add ability to remove favorites

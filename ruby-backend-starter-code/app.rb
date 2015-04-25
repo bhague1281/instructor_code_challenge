@@ -12,7 +12,13 @@ end
 
 get '/favorites/add' do
   contents = File.read('data.json')
-  file = contents && contents.length >= 2 ? JSON.parse(contents) : JSON.parse('{"data": []}')
+  # check if contents are in the file and initialize file accordingly
+  if (contents && contents.length >= 2)
+    file = JSON.parse(contents)
+  else
+    file = JSON.parse('{"data": []}')
+  end
+  # if params not available, signal that this request is invalid
   unless params[:name] && params[:oid]
     return 'Invalid Request'
   end
