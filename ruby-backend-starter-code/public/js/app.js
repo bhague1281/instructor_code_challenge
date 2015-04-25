@@ -16,6 +16,7 @@
         var favoriteButton = document.createElement('button');
         favoriteButton.setAttribute('data-oid', res[i].imdbID);
         favoriteButton.setAttribute('data-name', res[i].Title);
+        favoriteButton.setAttribute('onclick', 'addMovieToFavorites("' + res[i].Title + '","' + res[i].imdbID + '");');
         favoriteButton.innerText = 'Favorite';
 
         // append movie title and favorite button to list
@@ -25,4 +26,18 @@
   });
     xhr.send();
   });
+
+  document.addMovieToFavorites = function(movieName, movieID) {
+    // send request to add a favorite movie
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/favorites/add?name=' + movieName + '&oid=' + movieID);
+    xhr.send(null);
+
+    // return whether or not the request was successful by checking the response
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4) {
+        return xhr.responseText === 'Invalid Request';
+      }
+    }
+  };
 })();
