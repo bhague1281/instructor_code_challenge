@@ -1,18 +1,31 @@
+/*
+  styles.css
+*/
+
+/* set the body font to the Google font uploaded in index.html */
 body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-#search-box h2 {
+/* display the search box inline with the search header */
+#search-box h2,
+#search-box form {
     display: inline;
 }
 
 #search-box form {
-    display: inline;
     padding: 10px;
 }
 
+/* remove top margin on the h2 header so the header is flush with the search box */
 #details-box h2 {
     margin-top: 0;
+}
+
+/* basic column setup for the search/favorites and movie details */
+.container {
+    width: 100%;
+    word-wrap: break-word;
 }
 
 .col-1, .col-2 {
@@ -27,9 +40,4 @@ body {
 
 .col-2 {
     max-width: 60%;
-}
-
-.container {
-    width: 100%;
-    word-wrap: break-word;
 }

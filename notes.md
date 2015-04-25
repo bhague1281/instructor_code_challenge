@@ -6,7 +6,9 @@
 
 ## To Do
 
-- add some basic CSS/styling
+- FIX: buttons are added directly to the search results list... bleh
+
+- FIX: no detail buttons are included in the favorites list
 
 - clean up code where possible (double-check naming, functions, etc.)
 
@@ -25,4 +27,10 @@
 
 ## Summary
 
-- For this project, I chose the ruby backend because I'm a little more familiar with ruby. Not familiar with Sinatra, but few problems were encountered, since it's pretty similar to Flask.
+- For this project, I chose the Ruby backend because I'm a little more familiar with Ruby. Not familiar with Sinatra, but few problems were encountered, since it's pretty similar to Flask.
+
+- The app JavaScript is broken up into four main functions, representing these actions:
+    * search for movies
+    * add a movie to the favorites list
+    * viewing the favorites list
+    * showing a movie's details
