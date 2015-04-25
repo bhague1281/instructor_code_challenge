@@ -7,6 +7,8 @@
     xhr.open('get', 'http://omdbapi.com/?s=' + encodeURIComponent(input), true);
     xhr.addEventListener('load', function(response){
       var res =  JSON.parse(this.response).Search;
+      // clear list items
+      document.querySelector('#results').innerHTML = '';
       for(var i = 0; i < res.length; i++){
         // create movie title list item
         var node = document.createElement('li');
@@ -43,6 +45,9 @@
     xhr.open('GET', '/favorites', true);
     xhr.addEventListener('load', function(response){
       if (this.response) {
+        // clear list items
+        document.querySelector('#favorites').innerHTML = '';
+
         favorites = JSON.parse(this.response).data;
         for(var i = 0; i < favorites.length; i++){
           // create favorite item
