@@ -1,0 +1,35 @@
+body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+#search-box h2 {
+    display: inline;
+}
+
+#search-box form {
+    display: inline;
+    padding: 10px;
+}
+
+#details-box h2 {
+    margin-top: 0;
+}
+
+.col-1, .col-2 {
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.col-1 {
+    width: 30%;
+}
+
+.col-2 {
+    max-width: 60%;
+}
+
+.container {
+    width: 100%;
+    word-wrap: break-word;
+}
