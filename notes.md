@@ -6,8 +6,6 @@
 
 ## To Do
 
-- FIX: no detail buttons are included in the favorites list
-
 - clean up code where possible (double-check naming, functions, etc.)
 
 - run JS through JSLint, HTML through validator

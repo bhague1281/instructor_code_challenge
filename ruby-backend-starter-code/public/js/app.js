@@ -66,10 +66,24 @@
 
         for(var i = 0; i < favorites.length; i++){
           // create favorite item
-          var node = document.createElement('li');
-          node.innerText = favorites[i].name;
+          var favorite = document.createElement('li');
+          favorite.innerText = favorites[i].name;
 
-          // append movie title and favorite button to list
+          // create movie detail button
+          var detailButton = document.createElement('button');
+          detailButton.setAttribute('onclick', 'showMovieDetails("' + favorites[i].oid + '");');
+          detailButton.innerText = 'Details';
+
+          // append favorite item and detail button to container
+          var container = document.createElement('div')
+          container.appendChild(favorite);
+          container.appendChild(detailButton);
+
+          // append container to list item
+          var node = document.createElement('li');
+          node.appendChild(container);
+
+          //append list item to results list
           document.querySelector('#favorites').appendChild(node);
         }
       } else {
