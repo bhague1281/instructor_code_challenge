@@ -22,6 +22,11 @@ body {
     margin-top: 0;
 }
 
+/* format results list */
+#results-box p {
+    margin-bottom: 0;
+}
+
 /* basic column setup for the search/favorites and movie details */
 .container {
     width: 100%;
@@ -40,4 +45,13 @@ body {
 
 .col-2 {
     max-width: 60%;
+}
+
+/* set the button styling in the container */
+
+.container button {
+    margin: 2px;
+    border: 0;
+    background-color: black;
+    color: white;
 }

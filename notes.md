@@ -6,8 +6,6 @@
 
 ## To Do
 
-- FIX: buttons are added directly to the search results list... bleh
-
 - FIX: no detail buttons are included in the favorites list
 
 - clean up code where possible (double-check naming, functions, etc.)

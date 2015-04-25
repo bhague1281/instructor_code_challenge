@@ -12,8 +12,8 @@
 
       for(var i = 0; i < res.length; i++){
         // create movie title list item
-        var node = document.createElement('li');
-        node.innerText = res[i].Title;
+        var title = document.createElement('p');
+        title.innerText = res[i].Title;
 
         // create movie detail button
         var detailButton = document.createElement('button');
@@ -25,10 +25,18 @@
         favoriteButton.setAttribute('onclick', 'addMovieToFavorites("' + res[i].Title + '","' + res[i].imdbID + '");');
         favoriteButton.innerText = 'Favorite';
 
-        // append movie title and favorite button to list
+        // append movie title and buttons to container
+        var container = document.createElement('div')
+        container.appendChild(title);
+        container.appendChild(detailButton);
+        container.appendChild(favoriteButton);
+
+        // append container to list item
+        var node = document.createElement('li');
+        node.appendChild(container);
+
+        //append list item to results list
         document.querySelector('#results').appendChild(node);
-        document.querySelector('#results').appendChild(detailButton);
-        document.querySelector('#results').appendChild(favoriteButton);
       }
     });
     xhr.send();
