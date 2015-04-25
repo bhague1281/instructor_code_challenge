@@ -23,7 +23,7 @@
         document.querySelector('#results').appendChild(node);
         document.querySelector('#results').appendChild(favoriteButton);
       }
-  });
+    });
     xhr.send();
   });
 
@@ -31,14 +31,10 @@
     // send request to add a favorite movie
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/favorites/add?name=' + movieName + '&oid=' + movieID);
-    xhr.send(null);
-
-    // return whether or not the request was successful by checking the response
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4) {
-        return xhr.responseText === 'Invalid Request';
-      }
-    }
+    xhr.addEventListener('load', function(response){
+      return this.responseText === 'Invalid Request';
+    });
+    xhr.send();
   };
 
   document.viewFavorites = function() {
@@ -63,7 +59,6 @@
         document.querySelector('#favorites').appendChild(node);
       }
     });
-
     xhr.send();
   };
 })();
