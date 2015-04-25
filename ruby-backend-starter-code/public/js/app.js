@@ -46,13 +46,20 @@
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/favorites', true);
     xhr.addEventListener('load', function(response){
-      favorites = JSON.parse(this.response).data;
-      for(var i = 0; i < favorites.length; i++){
-        // create favorite item
-        var node = document.createElement('li');
-        node.innerText = favorites[i].name;
+      if (this.response) {
+        favorites = JSON.parse(this.response).data;
+        for(var i = 0; i < favorites.length; i++){
+          // create favorite item
+          var node = document.createElement('li');
+          node.innerText = favorites[i].name;
 
-        // append movie title and favorite button to list
+          // append movie title and favorite button to list
+          document.querySelector('#favorites').appendChild(node);
+        }
+      } else {
+        // display message that no favorites are available
+        var node = document.createElement('li');
+        node.innerText = 'No favorites available';
         document.querySelector('#favorites').appendChild(node);
       }
     });
