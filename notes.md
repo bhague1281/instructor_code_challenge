@@ -26,5 +26,4 @@
 
 - incorporate Bootstrap or other front-end framework instead of minimal CSS
 - add more error checking, in case API returns inconsistent results
-- remove possibility of duplicate favorites
 - add ability to remove favorites

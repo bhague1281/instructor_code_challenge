@@ -23,7 +23,15 @@ get '/favorites/add' do
     return 'Invalid Request'
   end
   movie = { name: params[:name], oid: params[:oid] }
+
+  # return movie early if the same name/oid already exist in the data
+  file['data'].each do |movie|
+    if (movie['name'] == params[:name] && movie['oid'] == params[:oid])
+      return movie.to_json
+    end
+  end
+
   file['data'].push(movie)
   File.write('data.json', JSON.pretty_generate(file))
-  movie.to_json
+  return movie.to_json
 end
