@@ -16,6 +16,8 @@
 
 - For this project, I chose the Ruby backend because I'm a little more familiar with Ruby. Not familiar with Sinatra prior to this, but the learning curve was low, since it's pretty similar to Flask.
 
+- Run `bundle install` to ensure sinatra and json are installed.
+
 - The app JavaScript is broken up into four main functions, representing these actions:
     * search for movies
     * add a movie to the favorites list
